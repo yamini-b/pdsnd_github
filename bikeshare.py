@@ -24,8 +24,8 @@ def get_filters():
             continue
         else:
             break
-        
-        
+
+
 
     # TO DO: get user input for month (all, january, february, ... , june)
     while True:
@@ -35,7 +35,7 @@ def get_filters():
             continue
         else:
             break
-    
+
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
         day=input("which day would you like to filter by(Please select All in case you dont want to use a filter) ?\n")
@@ -64,7 +64,7 @@ def load_data(city, month, day):
     df['Start Time']=pd.to_datetime(df['Start Time'])#converting start to datetime
     df['month']=df['Start Time'].dt.month#extract month from start time
     df['day_of_week']=df['Start Time'].dt.weekday_name#extract day of week from start time
-    
+
     if month != 'All':
         months=['January','February','March','April','May','June']
         month=months.index(month)+1
@@ -83,7 +83,7 @@ def time_stats(df):
     # TO DO: display the most common month
     popular_month=df['month'].mode()[0]
     print('Most Common month:',popular_month)
-    
+
     # TO DO: display the most common day of week
     popular_day=df['day_of_week'].mode()[0]
     print('Most Common day:',popular_day)
@@ -115,7 +115,7 @@ def station_stats(df):
     df['popular_combo']=df['Start Station'].str.cat(df['End Station'],sep=' to ')#common str of station name
     popular_combination=df['popular_combo'].mode()[0]#popular station calc
     print('Most Common station combination :',popular_combination)
-    
+
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -155,7 +155,7 @@ def user_stats(df):
         print('Gender Type:', Gender_types)
     except:
         print("gender data not available for this location\n")
-        
+
 
     # TO DO: Display earliest, most recent, and most common year of birth
     try:
@@ -163,18 +163,18 @@ def user_stats(df):
         print("Earliest year :",Earliest_Year)
     except:
         print("Data not available")
-        
+
     try:
         Most_Recent_Year=df['Birth Year'].max()
         print("Most Recent year :",Most_Recent_Year)
     except:
         print("Data not available")
-        
+
     try:
         Common_Year=df['Birth Year'].value_counts().idxmax()
         print("Most Common year :",Common_Year)
     except:
-        print("Data not available")        
+        print("Data not available")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -184,17 +184,18 @@ def raw_data(df):
    if raw not in ('yes','no'):
         raw_data(df)
         return
-        
+
    else:
             while raw=='yes':
                 for i in range(5):
                     print(df.iloc[i])#to extract the first 5 rows
                     raw=input("more raw input? \n").lower()
                     if raw=='yes':
-                        continue 
+                        continue
                     else:
+                        print("Thanks!")#change 1 for the refactoring project
                         break
-   return    
+   return
 
 
 def main():
