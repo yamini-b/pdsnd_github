@@ -11,6 +11,7 @@ It is a python code that allows user to filter the bikeshare data by various par
 bikeshare.py and .gitignore file which ignored the data files
 change 1
 change 2(after reverting changes done to master )
+change 3
 
 ### Credits
 Udacity lessons :)
