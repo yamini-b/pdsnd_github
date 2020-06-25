@@ -1,15 +1,14 @@
 ### Date created
-Include the date you created this project and README file.
+25th June2020
 
 ### Project Title
-Replace the Project Title
+Bikeshare Project
 
 ### Description
-Describe what your project is about and what it does
+It is a python code that allows user to filter the bikeshare data by various parameters basing on cities.
 
 ### Files used
-Include the files used
+bikeshare.py and .gitignore file which ignored the data files
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+Udacity lessons :)
